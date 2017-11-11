@@ -11,12 +11,17 @@ public class Player_Melee_Attack_System : PlayerCubeBehavior
     
     //[System.NonSerialized]
     public Player_Health_System victim;
-    public GameObject vicobj;
+   
+   
     // Use this for initialization
     void Start () {
+
+        
+        
         if (!networkObject.IsOwner)
         {
             transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
+
             return;
         }
 
@@ -34,7 +39,7 @@ public class Player_Melee_Attack_System : PlayerCubeBehavior
            
             if (Input.GetMouseButtonDown(0))
             {
-               
+                
                 if (victim)
                 //=========================================================PEREPISAT NA COROUTINE======================================
                 {

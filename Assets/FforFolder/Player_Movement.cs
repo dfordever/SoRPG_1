@@ -15,6 +15,7 @@ public class Player_Movement : PlayerCubeBehavior
     CharacterController controller;
     public GameObject playerObj;
     public GameObject cameraObj;
+    public GameObject meleeTriggerObj;
     // Use this for initialization
     protected override void NetworkStart()
     {
