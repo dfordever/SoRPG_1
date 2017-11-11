@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.4.4f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -117,13 +115,16 @@
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\Server Browser\ServerBrowser.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\Server Browser\ServerBrowserItem.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\UnityObjectMapper.cs" />
-    <Compile Include="Assets\Cam_controller.cs" />
-    <Compile Include="Assets\Gamemanager.cs" />
-    <Compile Include="Assets\PlayerCube.cs" />
-    <Compile Include="Assets\Player_Melee_Attack_System.cs" />
-    <Compile Include="Assets\Player_Movement.cs" />
-    <Compile Include="Assets\startprocess_test.cs" />
-    <Compile Include="Assets\test.cs" />
+    <Compile Include="Assets\FforFolder\Cam_controller.cs" />
+    <Compile Include="Assets\FforFolder\Gamemanager.cs" />
+    <Compile Include="Assets\FforFolder\PlayerCube.cs" />
+    <Compile Include="Assets\FforFolder\Player_Health_System.cs" />
+    <Compile Include="Assets\FforFolder\Player_Melee_Attack_System.cs" />
+    <Compile Include="Assets\FforFolder\Player_Melee_Collision_Detection.cs" />
+    <Compile Include="Assets\FforFolder\Player_Movement.cs" />
+    <Compile Include="Assets\FforFolder\startprocess_test.cs" />
+    <Compile Include="Assets\FforFolder\test.cs" />
+    <Compile Include="Assets\Player_Melee_Collision_System.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Bearded Man Studios Inc\Editor\Resources\BMS_Forge_Editor\NetworkBehaviorTemplate.txt" />

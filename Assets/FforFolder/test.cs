@@ -11,15 +11,10 @@ public class test : PlayerCubeBehavior
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
-    }/// <summary>
-    /// /////////
-    /// </summary>
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (!networkObject.IsOwner)
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-        }
+        
     }
 }

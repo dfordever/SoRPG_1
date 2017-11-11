@@ -36,7 +36,7 @@ public class Player_Movement : PlayerCubeBehavior
             playerObj.transform.rotation = networkObject.rotation;
             return;
         }
-        Debug.Log("sdafasdf");
+        
 
         if (controller.isGrounded)
             {
