@@ -10,9 +10,9 @@ public class Player_Melee_Attack_System : PlayerCubeBehavior
     public bool meleeallowed;
     public bool rangedallowed;
     public bool attackallowed;
-    //[System.NonSerialized]
+    [System.NonSerialized]
     public Player_Health_System victim;
-
+    
 
 
     // Use this for initialization

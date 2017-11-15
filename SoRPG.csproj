@@ -116,7 +116,6 @@
     <Compile Include="Assets\FforFolder\Player_Health_System.cs" />
     <Compile Include="Assets\FforFolder\Player_Melee_Attack_System.cs" />
     <Compile Include="Assets\FforFolder\Player_Movement.cs" />
-    <Compile Include="Assets\FforFolder\startprocess_test.cs" />
     <Compile Include="Assets\FforFolder\test.cs" />
   </ItemGroup>
   <ItemGroup>
