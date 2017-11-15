@@ -43,17 +43,9 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new PlayerCubeNetworkObject(networker, id, frame);
 						break;
-					case playerNetworkObject.IDENTITY:
-						availableCallback = true;
-						obj = new playerNetworkObject(networker, id, frame);
-						break;
 					case TestNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new TestNetworkObject(networker, id, frame);
-						break;
-					case PlayerPrefabNetworkObject.IDENTITY:
-						availableCallback = true;
-						obj = new PlayerPrefabNetworkObject(networker, id, frame);
 						break;
 				}
 

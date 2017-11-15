@@ -2,7 +2,7 @@
 using System.Collections;
 using BeardedManStudios.Forge.Networking.Generated;
 
-public class Cam_controller : PlayerCubeBehavior
+public class Cam_controller : MonoBehaviour
 {
 
 
@@ -19,10 +19,10 @@ public class Cam_controller : PlayerCubeBehavior
 
     private void Start()
     {
-        if (!networkObject.IsOwner)
-        {
-            return;
-        }
+       // if (!networkObject.IsOwner)
+      //  {
+      //      return;
+      //  }
        
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
@@ -30,20 +30,20 @@ public class Cam_controller : PlayerCubeBehavior
 
     private void Update()
     {
-        if (!networkObject.IsOwner)
-        {
-            return;
-        }
+       // if (!networkObject.IsOwner)
+     //   {
+     //       return;
+     //   }
         currentX += Input.GetAxis("Mouse X")* sensitivityX;
         currentY += -Input.GetAxis("Mouse Y");
         currentY = Mathf.Clamp(currentY, Y_angle_min, Y_angle_max);
     }
     private void LateUpdate()
     {
-        if (!networkObject.IsOwner)
-        {
-            return;
-        }
+     //   if (!networkObject.IsOwner)
+      //  {
+       //     return;
+        //}
         Vector3 dir = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         camTransform.position = lookAt.position + rotation * dir;

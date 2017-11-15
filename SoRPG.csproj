@@ -86,12 +86,8 @@
     <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\NetworkCameraNetworkObject.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\PlayerCubeBehavior.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\PlayerCubeNetworkObject.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\PlayerPrefabBehavior.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\PlayerPrefabNetworkObject.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\TestBehavior.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\TestNetworkObject.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\playerBehavior.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\playerNetworkObject.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Modules\Chat\ChatMaker.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Modules\Chat\ChatManager.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Modules\LobbySystem\LobbyManager.cs" />
@@ -117,7 +113,6 @@
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\UnityObjectMapper.cs" />
     <Compile Include="Assets\FforFolder\Cam_controller.cs" />
     <Compile Include="Assets\FforFolder\Gamemanager.cs" />
-    <Compile Include="Assets\FforFolder\PlayerCube.cs" />
     <Compile Include="Assets\FforFolder\Player_Health_System.cs" />
     <Compile Include="Assets\FforFolder\Player_Melee_Attack_System.cs" />
     <Compile Include="Assets\FforFolder\Player_Movement.cs" />

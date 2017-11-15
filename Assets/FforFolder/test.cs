@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking;
 
 public class test : PlayerCubeBehavior
 {
@@ -16,5 +17,11 @@ public class test : PlayerCubeBehavior
 	// Update is called once per frame
 	void Update () {
         
+    }
+
+    // Этот оверрайд почему то необходимо прописывать для всех классов которые являются дочерними классами для PlayerCubeBehavior , используется только в атак системе
+    public override void Attack(RpcArgs args)
+    {
+        throw new System.NotImplementedException();
     }
 }

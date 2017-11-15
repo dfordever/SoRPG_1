@@ -14,6 +14,7 @@ public class Gamemanager : MonoBehaviour {
     private void Start()
     {
        
+
         //NetworkManager.Instance.InstantiatePlayerPrefabNetworkObject();
         NetworkManager.Instance.InstantiatePlayerCubeNetworkObject();
     }
@@ -22,4 +23,5 @@ public class Gamemanager : MonoBehaviour {
     void Update () {
 	
 	}
+ 
 }

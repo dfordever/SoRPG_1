@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[]")]
-	[GeneratedRPCVariableNames("{\"types\":[]")]
+	[GeneratedRPC("{\"types\":[[\"float\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"Damage\"]]")]
 	public abstract partial class PlayerCubeBehavior : NetworkBehavior
 	{
+		public const byte RPC_ATTACK = 0 + 5;
 		
 		public PlayerCubeNetworkObject networkObject = null;
 
@@ -21,6 +22,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
+			networkObject.RegisterRpc("Attack", Attack, typeof(float));
 
 			MainThreadManager.Run(() =>
 			{
@@ -95,6 +97,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.SnapInterpolations();
 		}
 
+		/// <summary>
+		/// Arguments:
+		/// float Damage
+		/// </summary>
+		public abstract void Attack(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}
