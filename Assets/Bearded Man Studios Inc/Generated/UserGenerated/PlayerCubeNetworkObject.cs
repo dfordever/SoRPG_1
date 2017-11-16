@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedInterpol("{\"inter\":[0.15,0.15,0]")]
+	[GeneratedInterpol("{\"inter\":[0.15,0.15,0,0]")]
 	public partial class PlayerCubeNetworkObject : NetworkObject
 	{
 		public const int IDENTITY = 5;
@@ -105,6 +105,36 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (healthChanged != null) healthChanged(_health, timestep);
 			if (fieldAltered != null) fieldAltered("health", _health, timestep);
 		}
+		private Vector3 _projectileposition;
+		public event FieldEvent<Vector3> projectilepositionChanged;
+		public InterpolateVector3 projectilepositionInterpolation = new InterpolateVector3() { LerpT = 0f, Enabled = false };
+		public Vector3 projectileposition
+		{
+			get { return _projectileposition; }
+			set
+			{
+				// Don't do anything if the value is the same
+				if (_projectileposition == value)
+					return;
+
+				// Mark the field as dirty for the network to transmit
+				_dirtyFields[0] |= 0x8;
+				_projectileposition = value;
+				hasDirtyFields = true;
+			}
+		}
+
+		public void SetprojectilepositionDirty()
+		{
+			_dirtyFields[0] |= 0x8;
+			hasDirtyFields = true;
+		}
+
+		private void RunChange_projectileposition(ulong timestep)
+		{
+			if (projectilepositionChanged != null) projectilepositionChanged(_projectileposition, timestep);
+			if (fieldAltered != null) fieldAltered("projectileposition", _projectileposition, timestep);
+		}
 
 		protected override void OwnershipChanged()
 		{
@@ -117,6 +147,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			positionInterpolation.current = positionInterpolation.target;
 			rotationInterpolation.current = rotationInterpolation.target;
 			healthInterpolation.current = healthInterpolation.target;
+			projectilepositionInterpolation.current = projectilepositionInterpolation.target;
 		}
 
 		public override int UniqueIdentity { get { return IDENTITY; } }
@@ -126,6 +157,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			UnityObjectMapper.Instance.MapBytes(data, _position);
 			UnityObjectMapper.Instance.MapBytes(data, _rotation);
 			UnityObjectMapper.Instance.MapBytes(data, _health);
+			UnityObjectMapper.Instance.MapBytes(data, _projectileposition);
 
 			return data;
 		}
@@ -144,6 +176,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			healthInterpolation.current = _health;
 			healthInterpolation.target = _health;
 			RunChange_health(timestep);
+			_projectileposition = UnityObjectMapper.Instance.Map<Vector3>(payload);
+			projectilepositionInterpolation.current = _projectileposition;
+			projectilepositionInterpolation.target = _projectileposition;
+			RunChange_projectileposition(timestep);
 		}
 
 		protected override BMSByte SerializeDirtyFields()
@@ -157,6 +193,8 @@ namespace BeardedManStudios.Forge.Networking.Generated
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _rotation);
 			if ((0x4 & _dirtyFields[0]) != 0)
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _health);
+			if ((0x8 & _dirtyFields[0]) != 0)
+				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _projectileposition);
 
 			return dirtyFieldsData;
 		}
@@ -208,6 +246,19 @@ namespace BeardedManStudios.Forge.Networking.Generated
 					RunChange_health(timestep);
 				}
 			}
+			if ((0x8 & readDirtyFlags[0]) != 0)
+			{
+				if (projectilepositionInterpolation.Enabled)
+				{
+					projectilepositionInterpolation.target = UnityObjectMapper.Instance.Map<Vector3>(data);
+					projectilepositionInterpolation.Timestep = timestep;
+				}
+				else
+				{
+					_projectileposition = UnityObjectMapper.Instance.Map<Vector3>(data);
+					RunChange_projectileposition(timestep);
+				}
+			}
 		}
 
 		public override void InterpolateUpdate()
@@ -229,6 +280,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			{
 				_health = (float)healthInterpolation.Interpolate();
 				RunChange_health(healthInterpolation.Timestep);
+			}
+			if (projectilepositionInterpolation.Enabled && !projectilepositionInterpolation.current.Near(projectilepositionInterpolation.target, 0.0015f))
+			{
+				_projectileposition = (Vector3)projectilepositionInterpolation.Interpolate();
+				RunChange_projectileposition(projectilepositionInterpolation.Timestep);
 			}
 		}
 

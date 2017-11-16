@@ -2,7 +2,7 @@
 using System.Collections;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking;
-
+using BeardedManStudios.Forge.Networking.Unity;
 public class Player_Melee_Attack_System : PlayerCubeBehavior
 {
     // peremenii napisat v private e.t.c for security
@@ -12,7 +12,8 @@ public class Player_Melee_Attack_System : PlayerCubeBehavior
     public bool attackallowed;
     [System.NonSerialized]
     public Player_Health_System victim;
-    
+    public PlayerCubeBehavior Damage_text;
+
 
 
     // Use this for initialization
@@ -57,9 +58,11 @@ public class Player_Melee_Attack_System : PlayerCubeBehavior
             if (other.gameObject.tag == "Player")//&&other!=gameObject)
             {
                     victim = other.gameObject.GetComponent<Player_Health_System>();
+                    //rpc для отправки урона потерпевшему
                     victim.networkObject.SendRpc(RPC_ATTACK, Receivers.Owner,Damage);
-                    
-                  //  Debug.Log("attack");
+                    //тот же самый рпц но на этом объекте для отображения урона по жертве
+                    networkObject.SendRpc(RPC_ATTACK, Receivers.Owner, Damage);
+                    //  Debug.Log("attack");
                     //запрещаем атаковать снова пока не пройдет кулдаун атаки 
                     attackallowed = false;
                     StartCoroutine("Attackdelay");
@@ -79,7 +82,9 @@ public class Player_Melee_Attack_System : PlayerCubeBehavior
     //RPC CALL to the server
     public override void Attack(RpcArgs args)
     {
-       // victim.Health -= 36.0f;//args.GetNext<float>();
+        //спавнится текст
+        Damage_text = NetworkManager.Instance.InstantiatePlayerCubeNetworkObject(1, victim.transform.position + Vector3.up, victim.transform.rotation, true);
+        Damage_text.gameObject.GetComponent<GUIText>().text = args.GetNext<float>().ToString();
         Debug.Log("attack");
     }
 

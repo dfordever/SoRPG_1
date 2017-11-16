@@ -3,10 +3,13 @@ using System.Collections;
 using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking;
 
+
 public class Player_Health_System : PlayerCubeBehavior
 {
 
     public float Health;
+   
+    
     // Use this for initialization
     protected override void NetworkStart()
     {
@@ -41,5 +44,8 @@ public class Player_Health_System : PlayerCubeBehavior
     {
         Debug.Log("poluchil uron");
         Health -= args.GetNext<float>();
+        
+            
+        
     }
 }

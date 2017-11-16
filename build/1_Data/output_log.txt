@@ -18,23 +18,80 @@ Platform assembly: C:\Users\Richard\Documents\sdfasdfasdfasdfasdfasdfasdfasdf\So
 Loading C:\Users\Richard\Documents\sdfasdfasdfasdfasdfasdfasdfasdf\SoRPG\build\1_Data\Managed\BeardedManStudios.dll into Unity Child Domain
 Platform assembly: C:\Users\Richard\Documents\sdfasdfasdfasdfasdfasdfasdfasdf\SoRPG\build\1_Data\Managed\ForgeNetworkingCommon.dll (this message is harmless)
 Loading C:\Users\Richard\Documents\sdfasdfasdfasdfasdfasdfasdfasdf\SoRPG\build\1_Data\Managed\ForgeNetworkingCommon.dll into Unity Child Domain
-- Completed reload, in  0.075 seconds
+- Completed reload, in  0.082 seconds
 Platform assembly: C:\Users\Richard\Documents\sdfasdfasdfasdfasdfasdfasdfasdf\SoRPG\build\1_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Richard\Documents\sdfasdfasdfasdfasdfasdfasdfasdf\SoRPG\build\1_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 5760x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.755123 ms
+The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
+ 
+(Filename:  Line: 1656)
+
+UnloadTime: 0.833238 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2f38 -> priority: 1 
+  Thread -> id: 22d0 -> priority: 1 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.638691 ms
+UnloadTime: 2.193688 ms
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 379.
-Total: 0.409890 ms (FindLiveObjects: 0.050614 ms CreateObjectMapping: 0.028379 ms MarkObjects: 0.319486 ms  DeleteObjects: 0.010825 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 392.
+Total: 0.584261 ms (FindLiveObjects: 0.057928 ms CreateObjectMapping: 0.024575 ms MarkObjects: 0.487421 ms  DeleteObjects: 0.013750 ms)
 
-[688] REQUESTED ID RECEIVED
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Movement.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Melee_Attack_System.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Health_System.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Movement.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Melee_Attack_System.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Health_System.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Movement.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Melee_Attack_System.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player_Health_System.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at BeardedManStudios.Forge.Networking.Unity.NetworkManager.InstantiatePlayerCubeNetworkObject (Int32 index, Nullable`1 position, Nullable`1 rotation, Boolean sendTransform) [0x00000] in <filename unknown>:0 
+  at Player_Melee_Attack_System.Attack (RpcArgs args) [0x00000] in <filename unknown>:0 
+  at BeardedManStudios.Forge.Networking.Rpc+<>c__DisplayClass16_0.<Invoke>b__0 () [0x00000] in <filename unknown>:0 
+  at BeardedManStudios.Forge.Networking.Unity.MainThreadManager.HandleActions () [0x00000] in <filename unknown>:0 
+  at BeardedManStudios.Forge.Networking.Unity.MainThreadManager.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
 poluchil uron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
